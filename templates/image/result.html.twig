@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Результаты</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+<h1>Найденные изображения</h1>
+<table>
+    <tr>
+        {% for image in images %}
+        <td>
+            <img src="{{ image.url }}" alt="Image">
+        </td>
+        {% if loop.index % 4 == 0 %}
+    </tr><tr>
+        {% endif %}
+        {% endfor %}
+    </tr>
+</table>
+<p>На странице обнаружено {{ count }} изображений на {{ (totalSize / 1048576)|number_format(2) }} Мб</p>
+
+<form action="{{ path('download_images') }}" method="POST">
+    <input type="hidden" name="images" value="{{ images|json_encode }}">
+    <button type="submit">Скачать все изображения</button>
+</form>
+</body>
+</html>

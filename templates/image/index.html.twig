@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Scraper</title>
+</head>
+<body>
+<h1>Введите URL</h1>
+<form action="{{ path('scrape') }}" method="POST">
+    <input type="text" name="url" placeholder="Введите URL" required>
+    <button type="submit">Го</button>
+</form>
+</body>
+</html>

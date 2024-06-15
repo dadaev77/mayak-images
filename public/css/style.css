@@ -1,0 +1,26 @@
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-item {
+    flex: 1 1 25%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+img {
+    max-width: 320px;
+    height: 210px;
+}
